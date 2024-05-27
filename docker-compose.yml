@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  reviewbook:
+    image: thanhtungeric/service-book-review-jenkins:latest
+    container_name: reviewbook
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb+srv://admin:admin@cluster0.dorlyyd.mongodb.net/arichitechture?retryWrites=true&w=majority&appName=Cluster0
+      SPRING_DATA_MONGODB_DATABASE: reviews
+      SPRING_APPLICATION_NAME: book-review
+      SERVER_PORT: 8086
+    ports:
+      - "8086:8086"
